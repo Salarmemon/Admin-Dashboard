@@ -21,6 +21,10 @@ body {
     width: max(20vw, 200px);
     height: 100vh;
     background-color: #158dc5;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .dashboard-icon {
@@ -71,25 +75,32 @@ body {
 
 
 .top-bar {
-    width: 100%;
+    width: calc(100% - max(20vw, 200px));
     height: 200px;
     background-color: #fff;
-    box-shadow: 0px 6px 6px #aaa;
+    box-shadow: 0px 6px 6px #777;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: max(20vw, 200px);
+    z-index: 10;
+
 }
 
 .flex-row {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 10px;
+    margin: 20px;
+
     
 }
 .search-box {
     display:flex;
     align-items: center;
+    width: 80%;
 }
 
 .search-icon {
@@ -102,12 +113,18 @@ body {
     width: 100%;
     border-radius: 20px;
     background-color: #eee;
+    height: 30px;
+    box-shadow: 0px 3px 3px #aaa;
+    padding: 10px;
+    
 }
 
 .bell-icon {
     width: 20px;
     margin-left: 20px;
 }
+
+
 
 .feature-button {
     margin-left: 10px;
@@ -121,4 +138,52 @@ body {
 }
 .feature-button:hover {
     background-color: #111144;
+}
+
+.title-text {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+
+.projects {
+    width: calc(100% - max(20vw, 200px));
+    height: 100%;
+    display: grid;
+    background-color: #bbb;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    min-height: calc(100vh - 300px);
+    position: relative; 
+    top: 200px;
+    left: max(20vw, 200px);
+}
+
+#main-content {
+    flex: 1;
+    height: 100%;
+}
+
+.project {
+    width: 350px;
+    height: 350px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px #333;
+    border-left: 10px solid yellow ;
+    border-radius: 10px;
+
+}
+.project-title {
+    margin: 10px;
+    text-align: center;
+    font-weight: 900;
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
+}
+
+.project-description {
+    margin: 10px;
+    font-size: 1rem
 }
